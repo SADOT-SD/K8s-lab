@@ -4,5 +4,6 @@ metadata:
   name: alb
   annotations:
     ingressclass.kubernetes.io/is-default-class: "true"
+    alb.ingress.kubernetes.io/subnets: subnet-029351f9f418da650,subnet-0335bc712f62d20df,subnet-029351f9f418da650
 spec:
   controller: eks.amazonaws.com/alb
