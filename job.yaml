@@ -1,0 +1,14 @@
+# job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backend-check
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: curl
+        image: radial/busyboxplus:curl
+        command: ["sh","-c","curl -s http://backend/hello && echo DONE"]
+  backoffLimit: 1
