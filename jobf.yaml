@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backend-check
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: wget
+        image: public.ecr.aws/docker/library/busybox:1.36
+        command: ["sh","-c","wget -qO- http://backend/hello && echo DONE"]
